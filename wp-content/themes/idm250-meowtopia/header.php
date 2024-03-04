@@ -6,5 +6,4 @@
         <title><?php echo get_the_title(); ?></title>
         <?php wp_head(); ?>
     </head>
-    <body>
-    <?php get_template_part('components/header') ?>
+    <?php get_template_part('components/main-header') ?>

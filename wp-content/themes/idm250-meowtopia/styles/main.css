@@ -9,8 +9,8 @@
 }
 
 @font-face {
-    font-family: "itim";
-    src: url('../fonts/Itim-Regular.ttf') format('truetype');
+    font-family: "louis-george-cafe";
+    src: url('../fonts/Louis\ George\ Cafe.ttf') format('truetype');
 }
 
 :root {
@@ -21,10 +21,18 @@
     --orange: #E58910;
     --pink: #F7C2BC;
 
-    --janda-fill: "janda-fill";
-    --janda-outline: "janda-outline";
-    --itim: "itim";
+    --font-heading: "janda-fill";
+    --font-subheading: "janda-outline";
+    --font-body: "louis-george-cafe";
 }
+
+/* ADVANCED CSS
+
+If a h2 is followed by a p tag, then the h2 will have the style below
+
+.content h2 + p {
+    margin-top: 10px;
+} */
 
 
 /* GLOBAL STYLES */
@@ -35,15 +43,198 @@
 
 body {
     background-color: var(--beige);
-    font-family: var(--itim);
+    font-family: var(--font-body);
 }
 
 a {
     text-decoration: none;
 }
 
+p {
+    line-height: 130%;
+    max-width: 600px;
+}
+
+main {
+    margin: 0 1.5rem;
+}
+
+h1, h2 {
+    font-family: var(--font-heading);
+    letter-spacing: 3px;
+}
+
+h1 {
+    color: var(--brown);
+    text-align: center;
+}
+
+h2 {
+    color: var(--orange);
+    margin-top: 2rem;
+}
+
+button {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin: 2rem auto;
+    border: 4px solid var(--orange);
+    border-radius: 2rem;
+    padding: 5px 8px;
+    background-color: var(--beige);
+    box-shadow: 4px 4px 6px 2px #BFBBB4;
+    transform: translateY(0);
+    transition: transform .2s;
+}
+
+button:hover {
+    transform: translateY(-1rem);
+    color: var(--brown);
+}
+
+button img {
+    width: 40px;
+}
+
+button p {
+    margin: 0 1rem;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+/* SINGLE PAGE - ADOPTION */
+
+table {
+    text-align: left;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+}
+
+table th, table td {
+    padding: .5rem 1rem;
+    border-radius: 2px;
+}
+
+table th {
+    background-color: var(--dark-green);
+    color: white;
+    font-weight: lighter;
+}
+
+table td {
+    background-color: var(--light-green);
+}
+
+#about-me-secondary {
+    margin-top: 2rem;
+    max-width: 600px;
+}
+
+.adoption > div {
+    display: flex;
+    column-gap: .75rem;
+}
+
+.adoption h3, .adoption p {
+    margin: .6rem 0;
+}
+
+.adoption h3 {
+    color: var(--dark-green);
+}
+
+.adoption img {
+    height: 35px;
+}
+
+/* ------------------------------------------------------------ */
+/* SINGLE PAGE - ADOPTION - IMAGE CAROUSEL */
+
+.mySlides {display: none}
+.mySlides img {
+    /* vertical-align: middle; */
+    display: block;
+    margin: auto;
+    height: 400px;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 800px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 45%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: var(--brown);
+  font-weight: bold;
+  font-size: 2rem;
+  transition: 0.4s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  color: var(--beige);
+  background-color: var(--brown);
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+/* .fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+} */
+
+
+/* ------------------------------------------------------------ */
 
 /* HEADER */
+
+header {
+    box-shadow: 0 5px 15px #BCBCBC;
+    background-color: var(--beige);
+    position: sticky; 
+    top: 0;
+    z-index: 3;
+}
 
 #header-logo {
     height: 6rem;
@@ -71,17 +262,18 @@ a {
 
 #menu-primary li a:hover{
     color: var(--brown);
-    font-weight: bolder;
+    font-weight:bold;
 }
 
 #menu-primary.active {
     display: block;
+    padding-bottom: 1rem;
 }
 
 .hamburger {
     cursor: pointer;
     position: absolute;
-    top: 5rem;
+    top: 2rem;
     right: 1.5rem;
 }
 
@@ -115,9 +307,7 @@ footer {
     background-color: var(--dark-green);
     color: white;
     text-align: center;
-    /* padding: 1rem 0; */
-    position: fixed;
-    bottom: 0;
+    padding: .5rem 0;
     width: 100%;
 }
 
@@ -126,12 +316,13 @@ footer p {
 }
 
 #footer-logo {
-    font-family: var(--janda-fill);
+    font-family: var(--font-heading);
     font-size: 200%;
 }
 
 #copyright {
     font-size: 80%;
+    margin: auto;
 }
 
 
@@ -143,6 +334,9 @@ footer p {
 }
 
 @media screen and (min-width: 600px) {
+    main {
+        margin: 0 3rem
+    }
     #footer-flex {
         display: flex;
         margin: 0 4rem;
@@ -158,6 +352,18 @@ footer p {
 }
 
 @media screen and (min-width: 750px) {
+    main {
+        margin: 0 4rem
+    }
+    #about-me-secondary {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 2rem auto;
+        justify-content: space-between;
+    }
+    .adoption > div {
+        width: 48%;
+    }
     .hamburger {
         display: none;
     }
@@ -167,10 +373,11 @@ footer p {
         justify-content: space-between;
         margin: 0 4rem;
     }
-    #menu-primary {
+    #menu-primary, #menu-primary.active {
         display: flex;
         column-gap: 2rem;
         margin: 0;
+        padding-bottom: 0;
     }
     #copyright {
         margin-top: -1rem;
@@ -180,6 +387,20 @@ footer p {
 @media screen and (min-width: 880px) {
     .nav-wrapper, #footer-flex {
         margin: 0 6rem;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .adoption-section {
+        display: grid;
+        grid-template-columns: auto auto;
+        column-gap: 2rem;
+        margin: 2rem auto auto auto;
+    }
+    .adoption-section > * {
+        margin-left: 0;
+        max-width: 600px;
+        width: fit-content;
     }
 }
 

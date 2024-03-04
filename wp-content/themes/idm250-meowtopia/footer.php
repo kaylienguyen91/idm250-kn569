@@ -1,3 +1,4 @@
+</main>
 <footer>
     <div id="footer-flex">
         <p id="footer-logo">Meowtopia</p>
