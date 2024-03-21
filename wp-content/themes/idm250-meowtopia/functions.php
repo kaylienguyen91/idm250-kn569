@@ -46,6 +46,16 @@ function create_custom_post_type() {
 };
   add_action('init', 'create_custom_post_type');
 
+
+function theme_support_options() {
+  $defaults = array(
+        'flex-height' => true,
+        'flex-width' => true,
+  );
+    add_theme_support( 'custom-logo', $defaults );
+}
+add_action( 'after_setup_theme', 'theme_support_options' );
+
 // function get_theme_menu($menu_name) {
 //     // Get menu items as a flat arrays
 //     $locations = get_nav_menu_locations();

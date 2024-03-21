@@ -29,7 +29,7 @@ define( 'DB_USER', 'root' );
 define( 'DB_PASSWORD', 'root' );
 
 /** Database hostname */
-define( 'DB_HOST', 'https://www.kayliednguyen.site/idm250' );
+define( 'DB_HOST', 'localhost' );
 
 /** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
@@ -79,12 +79,14 @@ $table_prefix = 'wp_';
  *
  * @link https://wordpress.org/documentation/article/debugging-in-wordpress/
  */
-define( 'WP_DEBUG', false );
+define('WP_DEBUG', false);
+
+// define('WP_HOME', 'http://localhost')
+// define('WP_SITEURL', 'http://localhost')
 
 /* Add any custom values between this line and the "stop editing" line. */
 
-define('WP_HOME','https://www.kayliednguyen.site/idm250');
-define('WP_SITEURL', 'https://www.kayliednguyen.site/idm250');
+
 
 /* That's all, stop editing! Happy publishing. */
 
